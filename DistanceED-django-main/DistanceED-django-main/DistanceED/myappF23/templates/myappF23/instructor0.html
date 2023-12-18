@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ instructor.first_name }} {{ instructor.last_name }} - Instructor Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}"/>
+</head>
+<body>
+    <h2>{{ instructor.first_name }} {{ instructor.last_name }} - Instructor Detail</h2>
+
+    <h3>Courses Taught:</h3>
+    {% if courses_taught %}
+        <ul>
+            {% for course in courses_taught %}
+                <li>{{ course.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No courses taught by this instructor.</p>
+    {% endif %}
+
+    <h3>Students Mentored:</h3>
+    {% if students_mentored %}
+        <ul>
+            {% for student in students_mentored %}
+                <li>{{ student.first_name }} {{ student.last_name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No students mentored by this instructor.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Learning WebApp!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/styles.css' %}"/>
+
+</head>
+<body>
+    {% if category_list %}
+        <h2>List of Categories</h2>
+        <ol>
+            {% for category in category_list %}
+{#                <li>{{ category.name }}</li>#}
+                <li><a href="{% url 'myappF23:detail' category.id %}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available categories!</strong>
+    {% endif %}
+
+    {% if course_list %}
+        <h2>List of courses:</h2>
+        <ul>
+            {% for course in course_list %}
+                <li>
+                    {{ course.title }} - Level: {{ course.get_level_display }} - Price: ${{ course.price }}
+                    <br>
+                    Instructor: <a href="{% url 'myappF23:instructor_detail' course.instructor.id %}">{{ course.instructor.first_name }} {{ course.instructor.last_name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong>There are no available courses for this category!</strong>
+    {% endif %}
+
+ <p><a href="about/">About page</a></p>
+    <p><a href="{% url 'myappF23:about' %}">About page</a></p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myappF23/styles.css' %}" />
+</head>
+<body>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <h2>Welcome {{ full_name }}!</h2>
+
+        <h3>Courses Ordered:</h3>
+        <ul>
+            {% for course in courses_ordered %}
+                <li>{{ course.title }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Courses Interested In:</h3>
+        <ul>
+            {% for course in courses_interested %}
+                <li>{{ course.title }}</li>
+            {% endfor %}
+        </ul>
+
+        <form action="{% url 'myappF23:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    {% endif %}
+
+</body>
+</html>

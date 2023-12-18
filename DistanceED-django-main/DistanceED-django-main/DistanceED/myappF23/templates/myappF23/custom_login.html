@@ -1,0 +1,9 @@
+{% extends 'myappF23/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body_block %}
+  {% if not request.user.is_authenticated %}
+    <p>You are not a registered Student! Please <a href="{% url 'myappF23:login' %}">login</a>.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,83 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+strong {
+    color: #e44d26; /* Google Material Design Red */
+}
+
+p {
+    margin: 10px 0;
+}
+
+a {
+    color: #007BFF; /* Bootstrap Blue */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+.hbar1{
+    display:inline;
+    margin: 15px;
+}
+
+body.login-body {
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login_form_container {
+    text-align: center;
+}
+
+form {
+    width: 300px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

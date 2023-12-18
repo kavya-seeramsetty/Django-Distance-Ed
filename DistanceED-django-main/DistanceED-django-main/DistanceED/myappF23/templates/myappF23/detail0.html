@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/styles.css' %}"/>
+</head>
+<body>
+    <h2><strong>Category:</strong> {{ category.name }}</h2>
+
+    <h3>Courses in this Category:</h3>
+    {% if courses %}
+        <ul>
+            {% for course in courses %}
+                <li>{{ course.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No courses available for this category.</p>
+    {% endif %}
+
+    <p><a href="{% url 'myappF23:index' %}">Back to Home</a></p>
+</body>
+</html>
